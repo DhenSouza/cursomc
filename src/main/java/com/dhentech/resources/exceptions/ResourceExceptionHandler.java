@@ -19,6 +19,7 @@ public class ResourceExceptionHandler {
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
 	}
 
+	// Tratamento de exeção para o delete
 	@ExceptionHandler(DataIntegrityException.class)
 	public ResponseEntity<StandardError> dataIntegrityViolationException(DataIntegrityException  e,
 			ServletRequest request) {
