@@ -11,6 +11,9 @@ import javax.persistence.ManyToOne;
 
 import org.springframework.context.annotation.ComponentScan;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @ComponentScan
 @Entity(name = "cidade")
 public class Cidade implements Serializable {
@@ -22,6 +25,7 @@ public class Cidade implements Serializable {
 
 	private String nome;
 
+	@JsonManagedReference
 	@ManyToOne
 	@JoinColumn(name = "estado_id")
 	private Estado estado;

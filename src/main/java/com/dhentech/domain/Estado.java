@@ -12,6 +12,8 @@ import javax.persistence.OneToMany;
 
 import org.springframework.context.annotation.ComponentScan;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @ComponentScan
 @Entity(name = "estado")
 public class Estado implements Serializable {
@@ -23,6 +25,7 @@ public class Estado implements Serializable {
 
 	private String nome;
 
+	@JsonBackReference
 	@OneToMany(mappedBy = "estado")
 	private List<Cidade> cidades = new ArrayList<>();
 

@@ -17,6 +17,7 @@ import javax.persistence.OneToMany;
 import org.springframework.context.annotation.ComponentScan;
 
 import com.dhentech.domain.enums.TipoCliente;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @ComponentScan
 @Entity(name = "cliente")
@@ -32,6 +33,7 @@ public class Cliente implements Serializable {
 	private String cpfOuCnpj;
 	private Integer tipo;
 
+	@JsonManagedReference
 	@OneToMany(mappedBy = "cliente")
 	private List<Endereco> enderecos = new ArrayList<>();
 
