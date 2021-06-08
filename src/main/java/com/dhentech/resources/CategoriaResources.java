@@ -2,6 +2,7 @@ package com.dhentech.resources;
 
 import java.net.URI;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.dhentech.domain.Categoria;
+import com.dhentech.dtos.CategoriaDTO;
 import com.dhentech.services.CategoriaService;
 
 @RestController
@@ -27,8 +29,10 @@ public class CategoriaResources {
 
 	// Buscar todas as categorias sem tratamento DTO por enquanto
 	@GetMapping
-	public ResponseEntity<List<Categoria>> getAll() {
-		return ResponseEntity.ok(service.findAll());
+	public ResponseEntity<List<CategoriaDTO>> findAll() {
+		List<Categoria> list = service.findAll();
+		List<CategoriaDTO> listDTO = list.stream().map(obj -> new CategoriaDTO(obj)).collect(Collectors.toList());
+		return ResponseEntity.ok().body(listDTO);
 	}
 
 	@GetMapping("/{id}")

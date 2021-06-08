@@ -47,7 +47,7 @@ public class CategoriaService {
 
 		try {
 			repository.deleteById(id);
-		} catch (DataIntegrityViolationException  e) {
+		} catch (DataIntegrityViolationException e) {
 			throw new DataIntegrityException("Categoria não pode ser deletada! possui produtos associados");
 		}
 	}
