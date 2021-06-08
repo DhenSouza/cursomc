@@ -34,4 +34,10 @@ public class CategoriaService {
 		return repository.save(obj);
 	}
 
+	// Meotod Put
+	public Categoria update(Categoria obj) {
+		find(obj.getId());
+		return repository.save(obj);
+	}
+
 }
