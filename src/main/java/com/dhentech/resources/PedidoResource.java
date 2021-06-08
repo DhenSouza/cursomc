@@ -8,19 +8,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dhentech.domain.Categoria;
-import com.dhentech.services.CategoriaService;
+import com.dhentech.domain.Pedido;
+import com.dhentech.services.PedidoService;
 
 @RestController
-@RequestMapping(value = "/categorias")
-public class CategoriaResources {
+@RequestMapping(value = "/pedidos")
+public class PedidoResource {
 	
 	@Autowired
-	private CategoriaService repository;
+	private PedidoService repository;
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Categoria> findById(@PathVariable Integer id) {
-		Categoria obj = repository.find(id);
+	public ResponseEntity<Pedido> findById(@PathVariable Integer id) {
+		Pedido obj = repository.find(id);
 		return ResponseEntity.ok().body(obj);
 	}
 
