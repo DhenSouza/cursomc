@@ -2,27 +2,39 @@ package com.dhentech.resources.exceptions;
 
 import java.io.Serializable;
 
-import org.springframework.http.HttpStatus;
-
 public class StandardError implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private HttpStatus status;
-	private String msg;
-	private Long timeStamp;
+	private Long timestamp;
 
-	public StandardError(HttpStatus notFound, String msg, Long timeStamp) {
+	private Integer status;
+
+	private String msg;
+	
+	public StandardError() {
 		super();
-		this.status = notFound;
-		this.msg = msg;
-		this.timeStamp = timeStamp;
 	}
 
-	public HttpStatus getStatus() {
+	public StandardError(Integer status, String msg, Long timeStamp) {
+		super();
+		this.status = status;
+		this.msg = msg;
+		this.timestamp = timeStamp;
+	}
+
+	public Integer getStatus() {
 		return status;
 	}
 
-	public void setStatus(HttpStatus status) {
+	public Long getTimestamp() {
+		return timestamp;
+	}
+
+	public void setTimestamp(Long timestamp) {
+		this.timestamp = timestamp;
+	}
+
+	public void setStatus(Integer status) {
 		this.status = status;
 	}
 
@@ -32,14 +44,6 @@ public class StandardError implements Serializable {
 
 	public void setMsg(String msg) {
 		this.msg = msg;
-	}
-
-	public Long getTimeStamp() {
-		return timeStamp;
-	}
-
-	public void setTimeStamp(Long timeStamp) {
-		this.timeStamp = timeStamp;
 	}
 
 }
