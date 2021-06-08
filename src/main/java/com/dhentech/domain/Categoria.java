@@ -12,8 +12,6 @@ import javax.persistence.ManyToMany;
 
 import org.springframework.context.annotation.ComponentScan;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 @ComponentScan
 @Entity(name = "categoria")
 public class Categoria implements Serializable {
@@ -33,7 +31,6 @@ public class Categoria implements Serializable {
 		this.nome = nome;
 	}
 
-	@JsonManagedReference
 	@ManyToMany(mappedBy = "categorias")
 	private List<Produto> produtos = new ArrayList<>();
 

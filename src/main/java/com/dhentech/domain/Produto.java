@@ -17,7 +17,6 @@ import javax.persistence.OneToMany;
 
 import org.springframework.context.annotation.ComponentScan;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @ComponentScan
@@ -33,7 +32,7 @@ public class Produto implements Serializable {
 
 	private Double preco;
 
-	@JsonBackReference
+	@JsonIgnore
 	@ManyToMany
 	@JoinTable(name = "PRODUTO_CATEGORIA", joinColumns = @JoinColumn(name = "produto_id"), inverseJoinColumns = @JoinColumn(name = "categoria_id"))
 	private List<Categoria> categorias = new ArrayList<>();
