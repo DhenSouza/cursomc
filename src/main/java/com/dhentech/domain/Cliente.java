@@ -22,7 +22,7 @@ import com.dhentech.domain.enums.TipoCliente;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @ComponentScan
-@Entity(name = "cliente")
+@Entity
 public class Cliente implements Serializable {
 	private static final long serialVersionUID = 1L;
 

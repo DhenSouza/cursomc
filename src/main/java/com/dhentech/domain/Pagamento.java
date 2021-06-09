@@ -16,7 +16,7 @@ import com.dhentech.domain.enums.EstadoPagamento;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @ComponentScan
-@Entity(name = "pagamento")
+@Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Pagamento implements Serializable {
 	private static final long serialVersionUID = 1L;

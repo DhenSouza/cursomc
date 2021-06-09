@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 import org.springframework.context.annotation.ComponentScan;
 
 @ComponentScan
-@Entity(name = "cidade")
+@Entity
 public class Cidade implements Serializable {
 	private static final long serialVersionUID = 1L;
 

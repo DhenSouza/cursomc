@@ -10,7 +10,7 @@ import org.springframework.context.annotation.ComponentScan;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @ComponentScan
-@Entity(name = "itemPedido")
+@Entity
 public class ItemPedido implements Serializable {
 	private static final long serialVersionUID = 1L;
 
